@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5313102C2D8017AC00F4D94F /* Demo1ViewControlelr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5313102B2D8017AC00F4D94F /* Demo1ViewControlelr.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -33,7 +32,6 @@
 		1D7E665F96C3043DB7C50BFC /* libPods-ATListVM_Example.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ATListVM_Example.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42ECE0BB2B3E570283DEDA46 /* Pods-ATListVM_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATListVM_Example.debug.xcconfig"; path = "Target Support Files/Pods-ATListVM_Example/Pods-ATListVM_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		4AADA995CF980F4AC342426C /* Pods-ATListVM_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ATListVM_Tests.release.xcconfig"; path = "Target Support Files/Pods-ATListVM_Tests/Pods-ATListVM_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		5313102B2D8017AC00F4D94F /* Demo1ViewControlelr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Demo1ViewControlelr.swift; sourceTree = "<group>"; };
 		580A626EDE71FBBACB457B14 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* ATListVM_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ATListVM_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -117,7 +115,6 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
-				5313102B2D8017AC00F4D94F /* Demo1ViewControlelr.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -336,7 +333,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5313102C2D8017AC00F4D94F /* Demo1ViewControlelr.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
@@ -492,7 +488,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.brownlee.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -509,7 +505,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.brownlee.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};

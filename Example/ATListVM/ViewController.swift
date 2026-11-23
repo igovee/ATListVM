@@ -21,8 +21,8 @@ class ViewController: UIViewController {
     }
 
     @IBAction func clickBtn(_ sender: Any) {
-        let vctl = Demo1ViewControlelr()
-        self.navigationController?.pushViewController(vctl, animated: true)
+//        let vctl = Demo1ViewControlelr()
+//        self.navigationController?.pushViewController(vctl, animated: true)
     }
 }
 

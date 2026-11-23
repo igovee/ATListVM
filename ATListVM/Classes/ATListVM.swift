@@ -7,6 +7,27 @@
 
 import UIKit
 
+/// `UICollectionView.elementKindSectionHeader` / `...Footer` were only introduced in Swift 4.2.
+/// Projects (or pod targets) still compiling in an older language mode only know the global
+/// `UICollectionElementKindSection*` constants, so both spellings are bridged here.
+enum ATCollectionElementKind {
+    static var sectionHeader: String {
+        #if swift(>=4.2)
+        return UICollectionView.elementKindSectionHeader
+        #else
+        return UICollectionElementKindSectionHeader
+        #endif
+    }
+
+    static var sectionFooter: String {
+        #if swift(>=4.2)
+        return UICollectionView.elementKindSectionFooter
+        #else
+        return UICollectionElementKindSectionFooter
+        #endif
+    }
+}
+
 open class ATListCell: UICollectionViewCell {
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -204,7 +225,7 @@ open class ATListSectionVM {
             DispatchQueue.main.async {
                 guard let collectionView = self.collectionView, let indexPath = self.indexPath else { return }
                 UIView.performWithoutAnimation {
-                    if let header = collectionView.supplementaryView(forElementKind: UICollectionView.elementKindSectionHeader, at: indexPath) as? ATListReuseableView {
+                    if let header = collectionView.supplementaryView(forElementKind: ATCollectionElementKind.sectionHeader, at: indexPath) as? ATListReuseableView {
                         header.refreshSubviews(isFromVM: true)
                         header.layoutIfNeeded()
                     }
@@ -216,7 +237,7 @@ open class ATListSectionVM {
             DispatchQueue.main.async {
                 guard let collectionView = self.collectionView, let indexPath = self.indexPath else { return }
                 UIView.performWithoutAnimation {
-                    if let footer = collectionView.supplementaryView(forElementKind: UICollectionView.elementKindSectionFooter, at: indexPath) as? ATListReuseableView {
+                    if let footer = collectionView.supplementaryView(forElementKind: ATCollectionElementKind.sectionFooter, at: indexPath) as? ATListReuseableView {
                         footer.refreshSubviews(isFromVM: true)
                         footer.layoutIfNeeded()
                     }
@@ -349,14 +370,14 @@ extension ATListViewProxy: UICollectionViewDataSource {
         guard let sectionVM = getSectionVM(section: indexPath.section) else {
             return UICollectionReusableView()
         }
-        if kind == UICollectionView.elementKindSectionHeader {
+        if kind == ATCollectionElementKind.sectionHeader {
             if let headerId = sectionVM.headerId {
                 let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: headerId, for: indexPath) as! ATListReuseableView
                 header.config(sectionVM: sectionVM, indexPath: indexPath)
                 self.delegate?.listViewProxy(collectionView: collectionView, header: header, kind: kind, indexPath: indexPath)
                 return header
             }
-        }else if kind == UICollectionView.elementKindSectionFooter {
+        }else if kind == ATCollectionElementKind.sectionFooter {
             if let footerId = sectionVM.footerId {
                 let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: footerId, for: indexPath) as! ATListReuseableView
                 footer.config(sectionVM: sectionVM, indexPath: indexPath)
@@ -469,7 +490,7 @@ extension UICollectionView {
     public func config(viewProxy:ATListViewProxy) {
         delegate = viewProxy
         dataSource = viewProxy
-        register(ATListReuseableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "ATListReuseableView")
-        register(ATListReuseableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "ATListReuseableView")
+        register(ATListReuseableView.self, forSupplementaryViewOfKind: ATCollectionElementKind.sectionHeader, withReuseIdentifier: "ATListReuseableView")
+        register(ATListReuseableView.self, forSupplementaryViewOfKind: ATCollectionElementKind.sectionFooter, withReuseIdentifier: "ATListReuseableView")
     }
 }
