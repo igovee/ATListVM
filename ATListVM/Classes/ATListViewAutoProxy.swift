@@ -14,7 +14,11 @@ open class ATListViewAutoProxy: ATListViewProxyBase {
 
     open override func attach(collectionView: UICollectionView) {
         super.attach(collectionView: collectionView)
-        guard let flow = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else { return }
+        guard let flow = collectionView.collectionViewLayout as? UICollectionViewFlowLayout else {
+            // 非 FlowLayout 时 self-sizing 不会生效，静默退化成估算高度，这里给个提示
+            assertionFailure("ATListViewAutoProxy 需要 UICollectionViewFlowLayout，当前 layout 不支持自撑开")
+            return
+        }
         // 布局级 self-sizing：FlowLayout 逐项走 preferredLayoutAttributesFitting。
         // 不要用 sizeForItemAt 返回 automaticSize —— 未测量项会以 greatestFiniteMagnitude
         // 记入 contentSize，累加后溢出成 inf，列表就滚不动了。

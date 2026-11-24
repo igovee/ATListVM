@@ -88,14 +88,11 @@ extension ATListViewProxyBase {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let sectionVM = getSectionVM(section: section)
         sectionVM?.collectionView = collectionView
-        sectionVM?.sectionIndex = section
+        sectionVM?.section = section
         return sectionVM?.itemVMs.count ?? 0
     }
 
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let sectionVM = getSectionVM(section: indexPath.section)
-        sectionVM?.indexPath = indexPath
-
         guard let itemVM = getItemVM(indexPath: indexPath) else {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "UICollectionViewCell", for: indexPath)
             self.delegate?.listViewProxy(collectionView: collectionView, cell: cell, indexPath: indexPath)
@@ -152,6 +149,15 @@ extension ATListViewProxyBase {
             }
         }
         return UICollectionReusableView()
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, at indexPath: IndexPath) {
+        // 没配 headerId/footerId 时 viewForSupplementary 会返回裸 UICollectionReusableView，这里静默跳过
+        (view as? ATListReuseableView)?.willDisplay()
+    }
+
+    public func collectionView(_ collectionView: UICollectionView, didEndDisplayingSupplementaryView view: UICollectionReusableView, forElementOfKind elementKind: String, at indexPath: IndexPath) {
+        (view as? ATListReuseableView)?.didEndDisplaying()
     }
 
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

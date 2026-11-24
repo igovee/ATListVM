@@ -25,7 +25,10 @@ class ViewController: UIViewController {
         let autoBtn = makeButton(title: "自动布局")
         autoBtn.addTarget(self, action: #selector(openAuto), for: .touchUpInside)
 
-        let stack = UIStackView(arrangedSubviews: [manualBtn, autoBtn])
+        let scenarioBtn = makeButton(title: "业务场景")
+        scenarioBtn.addTarget(self, action: #selector(openScenario), for: .touchUpInside)
+
+        let stack = UIStackView(arrangedSubviews: [manualBtn, autoBtn, scenarioBtn])
         stack.axis = .vertical
         stack.spacing = 16
         view.addSubview(stack)
@@ -59,7 +62,15 @@ class ViewController: UIViewController {
     @objc private func openAuto() {
         let menu = DemoMenuViewController(
             title: "自动布局",
-            entries: AutoDemos.entries + CommunityDemo.entries
+            entries: AutoDemos.entries
+        )
+        navigationController?.pushViewController(menu, animated: true)
+    }
+
+    @objc private func openScenario() {
+        let menu = DemoMenuViewController(
+            title: "业务场景",
+            entries: BusinessScenarioDemos.entries
         )
         navigationController?.pushViewController(menu, animated: true)
     }

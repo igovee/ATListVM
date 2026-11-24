@@ -2,7 +2,7 @@
 //  AutoDemos.swift
 //  ATListVM_Example
 //
-//  自动布局类：纵向 / 横向（沿用已有页面）、混合手动 + 自适应、header / footer。
+//  自动布局类：拼装全部 14 条 —— 原有 4 条 + 业务场景 5 条 + 边界 4 条 + 社区信息流。
 //
 
 import UIKit
@@ -107,5 +107,5 @@ enum AutoDemos {
                           note: "演示自适应列表的 header / footer：cell 自适应，header 仍只认 headerSize。",
                           listVM: AutoHeaderFooterListVM())
                   })
-    ]
+    ] + AutoSceneDemos.entries + AutoBoundaryDemos.entries + CommunityDemo.entries
 }

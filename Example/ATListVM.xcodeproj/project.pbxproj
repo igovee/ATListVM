@@ -16,6 +16,10 @@
 		DD4000061AFB9204008FA006 /* ManualBehaviorDemos.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4000051AFB9204008FA005 /* ManualBehaviorDemos.swift */; };
 		DD4000081AFB9204008FA008 /* AutoDemos.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4000071AFB9204008FA007 /* AutoDemos.swift */; };
 		DD40000A1AFB9204008FA00A /* CommunityDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4000091AFB9204008FA009 /* CommunityDemo.swift */; };
+		DD40000C1AFB9204008FA00C /* AutoSceneDemos.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40000B1AFB9204008FA00B /* AutoSceneDemos.swift */; };
+		DD40000E1AFB9204008FA00E /* AutoBoundaryDemos.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40000D1AFB9204008FA00D /* AutoBoundaryDemos.swift */; };
+		DD4000101AFB9204008FA010 /* BusinessScenarioDemos.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD40000F1AFB9204008FA00F /* BusinessScenarioDemos.swift */; };
+		DD4000121AFB9204008FA012 /* DynamicRefreshDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD4000111AFB9204008FA011 /* DynamicRefreshDemo.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
@@ -51,6 +55,10 @@
 		DD4000051AFB9204008FA005 /* ManualBehaviorDemos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManualBehaviorDemos.swift; sourceTree = "<group>"; };
 		DD4000071AFB9204008FA007 /* AutoDemos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoDemos.swift; sourceTree = "<group>"; };
 		DD4000091AFB9204008FA009 /* CommunityDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommunityDemo.swift; sourceTree = "<group>"; };
+		DD40000B1AFB9204008FA00B /* AutoSceneDemos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoSceneDemos.swift; sourceTree = "<group>"; };
+		DD40000D1AFB9204008FA00D /* AutoBoundaryDemos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutoBoundaryDemos.swift; sourceTree = "<group>"; };
+		DD40000F1AFB9204008FA00F /* BusinessScenarioDemos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusinessScenarioDemos.swift; sourceTree = "<group>"; };
+		DD4000111AFB9204008FA011 /* DynamicRefreshDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DynamicRefreshDemo.swift; sourceTree = "<group>"; };
 		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -136,6 +144,10 @@
 				DD4000051AFB9204008FA005 /* ManualBehaviorDemos.swift */,
 				DD4000071AFB9204008FA007 /* AutoDemos.swift */,
 				DD4000091AFB9204008FA009 /* CommunityDemo.swift */,
+				DD40000B1AFB9204008FA00B /* AutoSceneDemos.swift */,
+				DD40000D1AFB9204008FA00D /* AutoBoundaryDemos.swift */,
+				DD40000F1AFB9204008FA00F /* BusinessScenarioDemos.swift */,
+				DD4000111AFB9204008FA011 /* DynamicRefreshDemo.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -362,6 +374,10 @@
 				DD4000061AFB9204008FA006 /* ManualBehaviorDemos.swift in Sources */,
 				DD4000081AFB9204008FA008 /* AutoDemos.swift in Sources */,
 				DD40000A1AFB9204008FA00A /* CommunityDemo.swift in Sources */,
+				DD40000C1AFB9204008FA00C /* AutoSceneDemos.swift in Sources */,
+				DD40000E1AFB9204008FA00E /* AutoBoundaryDemos.swift in Sources */,
+				DD4000101AFB9204008FA010 /* BusinessScenarioDemos.swift in Sources */,
+				DD4000121AFB9204008FA012 /* DynamicRefreshDemo.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -556,7 +572,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.brownlee.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ATListVM_Example.app/ATListVM_Example";
 			};
 			name = Debug;
@@ -576,7 +593,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.brownlee.Demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				SWIFT_VERSION = 5.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ATListVM_Example.app/ATListVM_Example";
 			};
 			name = Release;

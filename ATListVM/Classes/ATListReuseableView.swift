@@ -35,4 +35,14 @@ open class ATListReuseableView: UICollectionReusableView {
     open func refreshSubviews(isFromVM:Bool) {
         
     }
+
+    /// 表头 / 表尾进入屏幕时调用，由 `ATListViewProxy` 转发 `collectionView(_:willDisplaySupplementaryView:...)`。
+    open func willDisplay() {
+
+    }
+
+    /// 表头 / 表尾离开屏幕时调用。
+    open func didEndDisplaying() {
+
+    }
 }
